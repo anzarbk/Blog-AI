@@ -1,11 +1,13 @@
 import "./globals.css";
 import { Open_Sans } from "next/font/google";
 import Navbar from "app/(shared)/Navbar";
-// import Footer from "app/(shared)/Footer";
+import Footer from "app/(shared)/Footer";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
 });
+
+const isDark = true
 
 export const metadata = {
   title: "Blog AI App",
@@ -20,9 +22,9 @@ export default function RootLayout({
   return (
     <html className={openSans.className} lang="en">
       <body>
-        <Navbar />
+        <Navbar isDark={isDark} />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
